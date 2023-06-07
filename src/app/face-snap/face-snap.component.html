@@ -1,6 +1,8 @@
-<h2>{{ title }}</h2>
-<p>Mise en ligne le {{ createdDate }}</p>
-<!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
-<img [src]="imageUrl" [alt]="imageDescription">
-<p>{{ description }}</p>
-<p>🫶 {{ snaps }}</p>
+<div class="face-snap-card">
+    <h2>{{ title }}</h2>
+    <p>Mise en ligne le {{ createdDate }}</p>
+    <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
+    <img [src]="imageUrl" [alt]="imageDescription">
+    <p>{{ description }}</p>
+    <p>🫶 {{ snaps }}</p>
+</div>
