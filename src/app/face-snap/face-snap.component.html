@@ -4,5 +4,8 @@
     <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
     <img [src]="imageUrl" [alt]="imageDescription">
     <p>{{ description }}</p>
-    <p>🫶 {{ snaps }}</p>
+    <p>
+        <button (click)="onAddSnap()">Oh Snap!</button>
+        🫶 {{ snaps }}
+    </p>
 </div>

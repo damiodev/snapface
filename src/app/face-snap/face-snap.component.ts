@@ -13,6 +13,7 @@ export class FaceSnapComponent implements OnInit {
   imageUrl!: string;
   imageDescription!: string;
 
+  // Méthode appelée à l'initialisation du composant
   ngOnInit(): void {
     this.title = 'Paris';
     this.description = 'Voyage à Paris le temps de passer mon examen de développement web.';
@@ -20,5 +21,10 @@ export class FaceSnapComponent implements OnInit {
     this.snaps = 7;
     this.imageUrl = 'https://images.pexels.com/photos/1850619/pexels-photo-1850619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     this.imageDescription = 'Tour eiffel';
+  }
+
+  // Méthode pour ajouter un snap
+  onAddSnap(): void {
+    this.snaps++;
   }
 }
