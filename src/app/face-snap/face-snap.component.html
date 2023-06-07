@@ -1,11 +1,12 @@
 <div class="face-snap-card">
-    <h2>{{ title }}</h2>
-    <p>Mise en ligne le {{ createdDate }}</p>
+    <!-- On spécifie "faceSnap.title" pour récupérer la valeur de la propriété "title" de l'objet "faceSnap -->
+    <h2>{{ faceSnap.title }}</h2>
+    <p>Mise en ligne le {{ faceSnap.createdDate }}</p>
     <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
-    <img [src]="imageUrl" [alt]="imageDescription">
-    <p>{{ description }}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.imageDescription">
+    <p>{{ faceSnap.description }}</p>
     <p>
         <button (click)="onSnap()">{{ buttonText }}</button>
-        🫶 {{ snaps }}
+        🫶 {{ faceSnap.snaps }}
     </p>
 </div>
