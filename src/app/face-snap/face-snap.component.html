@@ -1,4 +1,5 @@
-<div class="face-snap-card">
+<!-- On utilise la directive ngClass pour ajouter la classe SCSS "snapped" à l'élément HTML si la valeur de la propriété "buttonText" est égale à "Oops, unSnap!". -->
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
     <!-- On spécifie "faceSnap.title" pour récupérer la valeur de la propriété "title" de l'objet "faceSnap -->
     <h2>{{ faceSnap.title }}</h2>
     <p>Mise en ligne le {{ faceSnap.createdDate }}</p>
