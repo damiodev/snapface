@@ -5,6 +5,9 @@
     <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.imageDescription">
     <p>{{ faceSnap.description }}</p>
+    
+    <!-- On utilise la directive *ngIf pour afficher le paragraphe uniquement si la propriété "location" de l'objet "faceSnap" est définie -->
+    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
     <p>
         <button (click)="onSnap()">{{ buttonText }}</button>
         🫶 {{ faceSnap.snaps }}
