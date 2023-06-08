@@ -1,8 +1,9 @@
 <!-- On utilise la directive ngClass pour ajouter la classe SCSS "snapped" à l'élément HTML si la valeur de la propriété "buttonText" est égale à "Oops, unSnap!". -->
 <div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
     <!-- On spécifie "faceSnap.title" pour récupérer la valeur de la propriété "title" de l'objet "faceSnap -->
-    <h2>{{ faceSnap.title }}</h2>
-    <p>Mise en ligne le {{ faceSnap.createdDate }}</p>
+    <!-- On utilise le pipe "titlecase" pour mettre la première lettre de chaque mot en majuscule. -->
+    <h2>{{ faceSnap.title | titlecase}}</h2>
+    <p>Mise en ligne {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy'}}</p>
     <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.imageDescription">
     <p>{{ faceSnap.description }}</p>
