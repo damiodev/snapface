@@ -30,11 +30,11 @@ export class FaceSnapComponent implements OnInit
   {
     // Si le texte du bouton est "Oh snap!"
     if (this.buttonText === 'Oh snap!') {
-      this.faceSnapService.snapFaceSnapById(this.faceSnap.id); // Appelle la méthode snapFaceById du service FaceSnapsService
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'snap'); // Appelle la méthode snapFaceById du service FaceSnapsService
       this.buttonText = 'Oops, unSnap!'; // Change le texte du bouton
       // Sinon si le texte du bouton est "Oops, unSnap!"
     } else {
-      this.faceSnap.snaps--; // Enlève 1 au nombre de snaps
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'unsnap'); // Appelle la méthode unSnapFaceById du service FaceSnapsService
       this.buttonText = 'Oh snap!'; // Change le texte du bouton
     }
   }

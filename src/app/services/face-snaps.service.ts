@@ -75,12 +75,17 @@ export class FaceSnapsService {
         return this.faceSnaps;
     }
 
-    snapFaceSnapById(faceSnapId: number): void { 
+    getFaceSnapById(faceSnapId: number): FaceSnap {
         const faceSnap = this.faceSnaps.find(faceSnaps => faceSnaps.id === faceSnapId); // Récupère le FaceSnap correspondant à l'id passé en paramètre
-        if (faceSnap) { // Si le FaceSnap existe
-            faceSnap.snaps++; // Ajoute 1 au nombre de snaps
-        } else { // Si le FaceSnap n'existe pas
-            throw new Error('FaceSnap not found'); // Lève une erreur
+        if (!faceSnap) { // Si le FaceSnap n'existe pas
+            throw new Error('FaceSnap not found'); // Lève une erreur 
+        } else { // Si le FaceSnap existe
+            return faceSnap; // Retourne le FaceSnap
         }
+    }
+
+    snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): void { 
+        const faceSnap = this.getFaceSnapById(faceSnapId); // Récupère le FaceSnap correspondant à l'id passé en paramètre
+        snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--; // Incrémente ou décrémente le nombre de snaps du FaceSnap
     }
 }
