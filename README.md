@@ -38,3 +38,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Web app preview
+
+![Homepage](/img/capture1.png "homepage")
+
+![FaceSnap List](/img/capture2.png "facesnap-list")
+
+![FaceSnap](/img/capture3.png "facesnap")
+
+![FaceSnap Snapped](/img/capture4.png "facesnap-snapped")
