@@ -1,8 +1,2 @@
-<!-- Attribute binding: permet de lier une propriété d'un élément HTML à une propriété d'un objet TypeScript. -->
-<app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
-
-
-<!-- Ici *ngIf permet de conditionner l'affichage d'un élément HTML à une condition. Ici, on affiche le paragraphe uniquement si la propriété "location" de l'objet "faceSnap" est définie. -->
-<!-- Ci-dessous par exemple on affiche l'objet faceSnap uniquement si la propriété "snaps" de l'objet "faceSnap" est supérieure à 5. -->
-<!-- <app-face-snap [faceSnap]="myLastSnap" *ngIf="myLastSnap.snaps > 5"></app-face-snap> -->
-
+<app-header></app-header>
+<app-face-snap-list></app-face-snap-list>

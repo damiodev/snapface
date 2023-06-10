@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 // Importe la classe FaceSnap
 import { FaceSnap } from '../models/face-snap.model';
+import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component
 ({
@@ -12,14 +13,10 @@ export class FaceSnapComponent implements OnInit
 {
   // Propriété permettant de récupérer un objet de type FaceSnap
   @Input() faceSnap!: FaceSnap;
+           buttonText!: string; // Déclare une propriété buttonText de type string
 
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  imageDescription!: string;
-  buttonText!: string;
+  // Ici le constructeur permet d'injecter le service FaceSnapsService
+  constructor(private faceSnapService: FaceSnapsService) {}
 
   // Méthode appelée à l'initialisation du composant
   // void: veut dire que la méthode ne retourne rien
@@ -29,13 +26,15 @@ export class FaceSnapComponent implements OnInit
   }
 
   // Méthode appelée au clic sur le bouton "Oh snap!" ou "Oops, unSnap!"
-  onSnap(): void 
+  onSnap(): void
   {
+    // Si le texte du bouton est "Oh snap!"
     if (this.buttonText === 'Oh snap!') {
-      this.faceSnap.snaps++; // Rajoute 1 au nombre de snaps
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'snap'); // Appelle la méthode snapFaceById du service FaceSnapsService
       this.buttonText = 'Oops, unSnap!'; // Change le texte du bouton
+      // Sinon si le texte du bouton est "Oops, unSnap!"
     } else {
-      this.faceSnap.snaps--; // Enlève 1 au nombre de snaps
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'unsnap'); // Appelle la méthode unSnapFaceById du service FaceSnapsService
       this.buttonText = 'Oh snap!'; // Change le texte du bouton
     }
   }

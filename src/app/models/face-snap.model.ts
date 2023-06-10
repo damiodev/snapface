@@ -2,6 +2,7 @@
 export class FaceSnap 
 {
     // "!" permet de dire que la propriété sera initialisée plus tard
+    id!: number;
     title!: string;
     description!: string;
     imageUrl!: string;
