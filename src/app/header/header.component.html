@@ -1,3 +1,10 @@
 <header>
     <h1>snapface</h1>
+    <nav>
+        <!-- La directive routerLink permet de naviguer entre les différentes pages de l'application. -->
+        <!-- La directive routerLinkActive permet de définir une classe CSS à appliquer sur l'élément HTML si le lien est actif. -->
+        <!-- La directive routerLinkActiveOptions permet de définir des options pour la directive routerLinkActive. -->
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="facesnaps" routerLinkActive="active">Snapface</a>
+    </nav>
 </header>

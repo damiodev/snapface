@@ -1,18 +1,5 @@
-<!-- On utilise la directive ngClass pour ajouter la classe SCSS "snapped" à l'élément HTML si la valeur de la propriété "buttonText" est égale à "Oops, unSnap!". -->
 <div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
-    <!-- On spécifie "faceSnap.title" pour récupérer la valeur de la propriété "title" de l'objet "faceSnap -->
-    <!-- On utilise le pipe "titlecase" pour mettre la première lettre de chaque mot en majuscule. -->
     <h2>{{ faceSnap.title | titlecase}}</h2>
-    <p>Mise en ligne {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy'}}</p>
-    <!-- Ici l'utilisation des crochets "[]" aux propriétés nous permet ,dans les cas où les valeurs ne sont pas des string, de les lier quand même -->
-    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.imageDescription">
     <p>{{ faceSnap.description }}</p>
-    
-    <!-- On utilise la directive *ngIf pour afficher le paragraphe uniquement si la propriété "location" de l'objet "faceSnap" est définie -->
-    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
-    <p>
-        <button (click)="onSnap()">{{ buttonText }}</button>
-        <!-- Ci-dessous "ngStyle" nous permet d'ajouter la couleur verte à la valeur de la propriété "snaps" -->
-        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🫶 {{ faceSnap.snaps }}</span>
-    </p>
+    <button (click)="onViewFaceSnap()">VIEW</button>
 </div>

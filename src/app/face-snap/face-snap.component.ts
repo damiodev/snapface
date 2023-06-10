@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 // Importe la classe FaceSnap
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
+import { Router } from '@angular/router';
 
 @Component
 ({
@@ -16,7 +17,8 @@ export class FaceSnapComponent implements OnInit
            buttonText!: string; // Déclare une propriété buttonText de type string
 
   // Ici le constructeur permet d'injecter le service FaceSnapsService
-  constructor(private faceSnapService: FaceSnapsService) {}
+  constructor(private faceSnapService: FaceSnapsService,
+              private router: Router) {}
 
   // Méthode appelée à l'initialisation du composant
   // void: veut dire que la méthode ne retourne rien
@@ -37,5 +39,11 @@ export class FaceSnapComponent implements OnInit
       this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'unsnap'); // Appelle la méthode unSnapFaceById du service FaceSnapsService
       this.buttonText = 'Oh snap!'; // Change le texte du bouton
     }
+  }
+
+  // Méthode appelée au clic sur le bouton "Voir le FaceSnap"
+  onViewFaceSnap() {
+    // +: permet de convertir une chaîne de caractères en nombre
+    this.router.navigateByUrl('/facesnaps/' + this.faceSnap.id); // Redirige vers l'URL /facesnaps/id
   }
 }
